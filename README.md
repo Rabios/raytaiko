@@ -27,7 +27,7 @@ When circle passes the line:
 
 ## Why this made?
 
-My upcoming rhythm game who called Reve,Will use it's portions but if you love Taiko No Tatsujin you can do your edits on this one, You can also transform it into full game with your edit,Or make a game engine from zero using it.
+My upcoming rhythm game who called Reve,Will use it's portions but if you love Taiko no Tatsujin you can do your edits on this one, You can also transform it into full game with your edit,Or make a game engine from zero using it.
 
 So i made engine separated of the game for education and fun purposes,Edit it as you want as it's licensed in MIT license
 
