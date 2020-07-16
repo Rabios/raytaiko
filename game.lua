@@ -51,26 +51,26 @@ function drawlevel(positions)
 		    if type(config.resources.up) == "nil" then
 		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.first_color)
 		    else
-			    rl.DrawTexture(config.resources.up, positions[i][1], positions[i][2], rl.WHITE)
-			end
+			 rl.DrawTexture(config.resources.up, positions[i][1], positions[i][2], rl.WHITE)
+		    end
 		elseif level[i] == 2 then
 		   if type(config.resources.down) == "nil" then
 		       rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.second_color)
 		   else
 		       rl.DrawTexture(config.resources.down, positions[i][1], positions[i][2], rl.WHITE)
-           end			 
+                   end			 
 		elseif level[i] == 3 then
 		    if type(config.resources.left) == "nil" then
 		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.third_color)
 		    else
-			    rl.DrawTexture(config.resources.left, positions[i][1], positions[i][2], rl.WHITE)
-			end
+			rl.DrawTexture(config.resources.left, positions[i][1], positions[i][2], rl.WHITE)
+		    end
 		elseif level[i] == 4 then
 		    if type(config.resources.right) == "nil" then
 		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.fourth_color)
 		    else
-			    rl.DrawTexture(config.resources.right, positions[i][1], positions[i][2], rl.WHITE)
-			end
+			rl.DrawTexture(config.resources.right, positions[i][1], positions[i][2], rl.WHITE)
+		    end
 		end
 	-- Move them
 	positions[i][1] = positions[i][1] - config.circles.speed
@@ -84,25 +84,25 @@ function input()
 		-- Else,Reset combo and set status to negative
 		if rl.IsKeyPressed(config.keys.up) then
 		    if level[current_circle] == 1 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
-			    score = score + (config.hit_score * combo)
-				combo = combo + 1
-				status.text = "GOOD"
-				status.color = rl.GREEN
-				table.insert(hits, true)
-				rl.PlaySound(config.resources.hit_sound)
-			elseif level[current_circle] ~= 1 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+	                score = score + (config.hit_score * combo)
+			combo = combo + 1
+			status.text = "GOOD"
+			status.color = rl.GREEN
+			table.insert(hits, true)
+			rl.PlaySound(config.resources.hit_sound)
+		    elseif level[current_circle] ~= 1 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+			status.text = "MISS"
+			status.color = rl.RED
+			table.insert(hits, false)
+			rl.PlaySound(config.resources.miss_sound)
+		    else
+			if not level[current_circle] == 0 then
 			    status.text = "MISS"
-				status.color = rl.RED
-				table.insert(hits, false)
-				rl.PlaySound(config.resources.miss_sound)
-			else
-			    if not level[current_circle] == 0 then
-				     status.text = "MISS"
-				     status.color = rl.RED
-			         table.insert(hits, false)
-					 rl.PlaySound(config.resources.miss_sound)
-				end
+			    status.color = rl.RED
+			    table.insert(hits, false)
+			    rl.PlaySound(config.resources.miss_sound)
 			end
+	            end
 			
 		-- Else if down arrow key pressed and circle is blue and not very far and not very near
 		-- Increase combo and score,And set status to not negative
@@ -110,76 +110,76 @@ function input()
 		-- Else,Reset combo and set status to negative
 		elseif rl.IsKeyPressed(config.keys.down) then
 		    if level[current_circle] == 2 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
-			    score = score + (config.hit_score * combo)
-				combo = combo + 1
-				status.text = "GOOD"
-				status.color = rl.GREEN
-				table.insert(hits, true)
-				rl.PlaySound(config.resources.hit_sound)
-			elseif level[current_circle] ~= 2 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+		        score = score + (config.hit_score * combo)
+			combo = combo + 1
+			status.text = "GOOD"
+			status.color = rl.GREEN
+			table.insert(hits, true)
+			rl.PlaySound(config.resources.hit_sound)
+		    elseif level[current_circle] ~= 2 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+			status.text = "MISS"
+			status.color = rl.RED
+			table.insert(hits, false)
+			rl.PlaySound(config.resources.miss_sound)
+		    else
+			if not level[current_circle] == 0 then
 			    status.text = "MISS"
-				status.color = rl.RED
-				table.insert(hits, false)
-				rl.PlaySound(config.resources.miss_sound)
-			else
-			    if not level[current_circle] == 0 then
-			         status.text = "MISS"
-				     status.color = rl.RED
-			         table.insert(hits, false)
-					 rl.PlaySound(config.resources.miss_sound)
-				end
+		            status.color = rl.RED
+			    table.insert(hits, false)
+			    rl.PlaySound(config.resources.miss_sound)
 			end
+		    end
 			
 		elseif rl.IsKeyPressed(config.keys.left) then
 		    if level[current_circle] == 3 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
-			    score = score + (config.hit_score * combo)
-				combo = combo + 1
-				status.text = "GOOD"
-				status.color = rl.GREEN
-				table.insert(hits, true)
-				rl.PlaySound(config.resources.hit_sound)
-			elseif level[current_circle] ~= 3 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+	                score = score + (config.hit_score * combo)
+			combo = combo + 1
+			status.text = "GOOD"
+			status.color = rl.GREEN
+			table.insert(hits, true)
+			rl.PlaySound(config.resources.hit_sound)
+		    elseif level[current_circle] ~= 3 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+			status.text = "MISS"
+			status.color = rl.RED
+			table.insert(hits, false)
+			rl.PlaySound(config.resources.miss_sound)
+		    else
+			if not level[current_circle] == 0 then
 			    status.text = "MISS"
-				status.color = rl.RED
-				table.insert(hits, false)
-				rl.PlaySound(config.resources.miss_sound)
-			else
-			    if not level[current_circle] == 0 then
-			         status.text = "MISS"
-				     status.color = rl.RED
-			         table.insert(hits, false)
-					 rl.PlaySound(config.resources.miss_sound)
-				end
+		            status.color = rl.RED
+			    table.insert(hits, false)
+		            rl.PlaySound(config.resources.miss_sound)
 			end
+		    end
 		
 		elseif rl.IsKeyPressed(config.keys.right) then
 		    if level[current_circle] == 4 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
-			    score = score + (config.hit_score * combo)
-				combo = combo + 1
-				status.text = "GOOD"
-				status.color = rl.GREEN
-				table.insert(hits, true)
-				rl.PlaySound(config.resources.hit_sound)
-			elseif level[current_circle] ~= 4 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+	                score = score + (config.hit_score * combo)
+			combo = combo + 1
+			status.text = "GOOD"
+			status.color = rl.GREEN
+			table.insert(hits, true)
+			rl.PlaySound(config.resources.hit_sound)
+		    elseif level[current_circle] ~= 4 and level[current_circle] ~= 0 and not (circles_positions[current_circle][1] < -120 and circles_positions[current_circle][1] <= 0) then
+			status.text = "MISS"
+			status.color = rl.RED
+			table.insert(hits, false)
+			rl.PlaySound(config.resources.miss_sound)
+		    else
+			if not level[current_circle] == 0 then
 			    status.text = "MISS"
-				status.color = rl.RED
-				table.insert(hits, false)
-				rl.PlaySound(config.resources.miss_sound)
-			else
-			    if not level[current_circle] == 0 then
-			         status.text = "MISS"
-				     status.color = rl.RED
-			         table.insert(hits, false)
-					 rl.PlaySound(config.resources.miss_sound)
-				end
+		            status.color = rl.RED
+			    table.insert(hits, false)
+			    rl.PlaySound(config.resources.miss_sound)
 			end
+		    end
 		end
 		
 		-- When circle pass,Change current circle to check input with
 		if circles_positions[current_circle][1] < -120 then
 		    if level[current_circle] ~= 0 and not hits[#hits] then
-			    combo = 1
-			end
+		        combo = 1
+		    end
 		    current_circle = current_circle + 1
 		end
 end
