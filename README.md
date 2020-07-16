@@ -9,6 +9,11 @@ When circle passes the line:
 
 - If first color,Which is red,Hit up arrow
 - If second color,Which is blue,Hit down arrow
+
+## More added on the main game
+
+When circle passes the line:
+
 - If third color,Which is green,Hit left arrow
 - If fourth color,Which is purple,Hit right arrow
 
