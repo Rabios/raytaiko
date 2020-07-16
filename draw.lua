@@ -4,30 +4,30 @@ function drawlevel(positions)
     for i in ipairs(positions) do
 	    -- Check which color or direction
 	    if level[i] == 1 then
-		    if type(config.resources.up) == "nil" then
-		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.first_color)
-		    else
-			    rl.DrawTexturePro(config.resources.up, ffi.new("Rectangle", 0, 0, config.resources.up.width, config.resources.up.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-			end
-		elseif level[i] == 2 then
-		   if type(config.resources.down) == "nil" then
-		       rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.second_color)
-		   else
-		       rl.DrawTexturePro(config.resources.down, ffi.new("Rectangle", 0, 0, config.resources.down.width, config.resources.down.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-           end			 
-		elseif level[i] == 3 then
-		    if type(config.resources.left) == "nil" then
-		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.third_color)
-		    else
-			    rl.DrawTexturePro(config.resources.left, ffi.new("Rectangle", 0, 0, config.resources.left.width, config.resources.left.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-			end
-		elseif level[i] == 4 then
-		    if type(config.resources.right) == "nil" then
-		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.fourth_color)
-		    else
-			    rl.DrawTexturePro(config.resources.right, ffi.new("Rectangle", 0, 0, config.resources.right.width, config.resources.right.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-			end
+                if type(config.resources.up) == "nil" then
+		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.first_color)
+		else
+		    rl.DrawTexturePro(config.resources.up, ffi.new("Rectangle", 0, 0, config.resources.up.width, config.resources.up.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
 		end
+	    elseif level[i] == 2 then
+		if type(config.resources.down) == "nil" then
+		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.second_color)
+		else
+		    rl.DrawTexturePro(config.resources.down, ffi.new("Rectangle", 0, 0, config.resources.down.width, config.resources.down.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+                end			 
+	    elseif level[i] == 3 then
+		if type(config.resources.left) == "nil" then
+		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.third_color)
+		else
+	            rl.DrawTexturePro(config.resources.left, ffi.new("Rectangle", 0, 0, config.resources.left.width, config.resources.left.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+		end
+	    elseif level[i] == 4 then
+		if type(config.resources.right) == "nil" then
+		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.fourth_color)
+		else
+		    rl.DrawTexturePro(config.resources.right, ffi.new("Rectangle", 0, 0, config.resources.right.width, config.resources.right.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+		end
+	    end
 	-- Move them
 	positions[i][1] = positions[i][1] - config.circles.speed
 	end
