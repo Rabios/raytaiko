@@ -1,5 +1,6 @@
 -- Draw graphics part, Loaded by game.lua
 -- Draw level content
+ffi = require("ffi")
 function drawlevel(positions)
     for i in ipairs(positions) do
 	    -- Check which color or direction
