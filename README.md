@@ -1,33 +1,29 @@
 # raytaiko
-Simple Taiko no Tatsujin engine written in Lua using [raylib](http://www.raylib.com), Via [Astie Teddy's raylib LuaJIT binding](https://github.com/TSnake41/raylib-lua),Moddable with Lua.
-
-<img src="https://github.com/Rabios/raytaiko/blob/master/Screenshot%20(193).png">
+Simple Taiko No Tatsujin engine written in Lua using [raylib](http://www.raylib.com), Via [Astie Teddy's raylib LuaJIT binding](https://github.com/TSnake41/raylib-lua),Moddable with Lua.
 
 ## How to play?
 
 When circle passes the line:
 
-- If first color,Which is red,Hit up arrow
-- If second color,Which is blue,Hit down arrow
-
-## More additions for the main game
-
-When circle passes the line:
-
-- If third color,Which is green,Hit left arrow
-- If fourth color,Which is purple,Hit right arrow
+- If first color,Which is red,Hit up arrow.
+- If second color,Which is blue,Hit down arrow.
+- If third color,Which is green,Hit left arrow.
+- If fourth color,Which is purple,Hit right arrow.
 
 ## How to mod the game?
 
-- In `config.lua`,You can edit game preferences and also score increasion value to multiplied by combo,And to add song in `config.resources.song` and custom level in `config.level`,Or add your own preferences to use with `game.lua` file.
-- Game logic,Input,And loading content and level lies in `game.lua`,You can edit it for more levels,Or editing it fully if you have experience with [raylib-lua](https://github.com/TSnake41/raylib-lua).
-- You can also edit input and circle colors and even reskin the engine,All that in `config.lua`And you can add your touches to `game.lua` if you want.
+- `main.lua` contains game version and author and also loads the game.
+- `utils.lua` contains functions for reading game level and checking if song/level finished or not.
+- `config.lua` contains game options,And you can create your own custom level(s) and load backgrounds, images, And song to play.
+- `draw.lua` contains drawing functions for game content.
+- `input.lua` contains input logic for game.
+- `game.lua` starts the game and loads options to use by `draw.lua` and `input.lua` from `config.lua`.
 
 > NOTES: You might need to learn some [Lua](https://lua.org) and [LuaJIT](https://luajit.org) to mod some parts of the game
 
 ## Why this made?
 
-My upcoming rhythm game who called Reve,Will use it's portions but if you love Taiko no Tatsujin you can do your edits on this one, You can also transform it into full game with your edit,Or make a game engine from zero using it.
+My upcoming rhythm game who called Reve,Will use it's portions but if you love Taiko No Tatsujin you can do your edits on this one, You can also transform it into full game with your edit,Or make a game engine from zero using it.
 
 So i made engine separated of the game for education and fun purposes,Edit it as you want as it's licensed in MIT license
 
