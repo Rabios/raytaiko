@@ -1,0 +1,14 @@
+Credits:
+
+Rabia Alhaffar (Main developer)
+
+Used:
+
+Lua -> https://lua.org
+LuaJIT -> https://luajit.org
+raylib -> http://www.raylib.com
+raylib-lua -> https://github.com/TSnake41/raylib-lua
+Hit sound (5.wav) by adcbicycle on freesound.org -> https://freesound.org/people/adcbicycle/sounds/13909
+Miss sound (Throw/Swipe) by mrickey13 on freesound.org -> https://freesound.org/people/mrickey13/sounds/515625
+
+Game source code -> https://github.com/Rabios/raytaiko
