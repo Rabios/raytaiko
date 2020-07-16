@@ -4,7 +4,7 @@ dofile("config.lua")
 
 -- Load a sample if there is no custom game level
 if type(config.level) == "nil" then
-    -- 0 = No circle
+        -- 0 = No circle
 	-- 1 = First color circle,Up key to hit
 	-- 2 = Second color circle,Down key to hit
 	-- 3 = Third color circle,Left key to hit
@@ -24,14 +24,14 @@ status = { text = "OKAY", color = rl.WHITE }
 
 -- Create positions for circles in the sample
 function readlevel(circles)
-	circles_positions = {}
-	hits = {}
+    circles_positions = {}
+    hits = {}
     score = 0
     combo = 1
-	current_circle = 1
+    current_circle = 1
     for i = 1, #circles, 1 do
-	    table.insert(circles_positions, { i * config.circles.margin * 100, config.options.height - (config.circles.size * 2) })
-	end
+        table.insert(circles_positions, { i * config.circles.margin * 100, config.options.height - (config.circles.size * 2) })
+    end
 end
 
 function level_finished()
@@ -40,8 +40,8 @@ end
 
 function song_finished()
     if config.resources.song ~= nil then
-	    return rl.IsMusicPlaying(config.resources.song) == false
-	end
+        return rl.IsMusicPlaying(config.resources.song) == false
+    end
 end
 
 function drawlevel(positions)
@@ -210,9 +210,9 @@ readlevel(level)
 -- Game scene
 function game()
     rl.BeginDrawing()
-	    draw()
-		input()
-	rl.EndDrawing()
+	draw()
+	input()
+    rl.EndDrawing()
 end
 
 -- Create window with audio device initialization,And VSync enabled
