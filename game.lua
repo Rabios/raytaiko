@@ -7,7 +7,7 @@ dofile("input.lua")
 
 -- Load a sample if there is no custom game level
 if type(config.level) == "nil" then
-    -- 0 = No circle
+        -- 0 = No circle
 	-- 1 = First color circle,Up key to hit
 	-- 2 = Second color circle,Down key to hit
 	-- 3 = Third color circle,Left key to hit
@@ -32,12 +32,12 @@ readlevel(level)
 -- Game scene
 function game()
     rl.BeginDrawing()
-	    draw()
-		input()
-	rl.EndDrawing()
+        draw()
+        input()
+    rl.EndDrawing()
 	
-	-- NOTES: Timer isn't used in the game,But can be useful to manipulate parts of the level
-	timer = timer + 1
+    -- NOTES: Timer isn't used in the game,But can be useful to manipulate parts of the level
+    timer = timer + 1
 end
 
 -- Create window with audio device initialization,And VSync enabled
