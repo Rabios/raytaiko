@@ -10,7 +10,7 @@ When circle passes the line:
 - If first color,Which is red,Hit up arrow
 - If second color,Which is blue,Hit down arrow
 
-## More added on the main game
+## More additions for the main game
 
 When circle passes the line:
 
