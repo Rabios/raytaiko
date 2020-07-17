@@ -28,7 +28,7 @@ config = {
 		fourth_color = rl.PURPLE,
 		size = 50,
 		margin = 200, -- Distance x between each circle
-		speed = 10,
+		speed = 10
 	},
 	
 	-- Array consists of 0s, 1s, 2s, 3s,Or even 4s
