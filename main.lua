@@ -2,7 +2,7 @@
 -- Main Taiko engine file
 setmetatable(_G, { __index = rl })
 author = "Rabia Alhaffar"
-version = "v0.0.2"
+version = "v0.0.3"
 
 -- Load the game
 dofile("game.lua")

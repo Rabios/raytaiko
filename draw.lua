@@ -1,34 +1,33 @@
 -- Draw graphics part, Loaded by game.lua
 -- Draw level content
-ffi = require("ffi")
 function drawlevel(positions)
     for i in ipairs(positions) do
 	    -- Check which color or direction
 	    if level[i] == 1 then
-                if type(config.resources.up) == "nil" then
-		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.first_color)
-		else
-		    rl.DrawTexturePro(config.resources.up, ffi.new("Rectangle", 0, 0, config.resources.up.width, config.resources.up.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+		    if not config.resources.up then
+		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.first_color)
+		    else
+			    rl.DrawTexturePro(config.resources.up, ffi.new("Rectangle", 0, 0, config.resources.up.width, config.resources.up.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.resources.images_size, config.resources.images_size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+			end
+		elseif level[i] == 2 then
+		   if not config.resources.down then
+		       rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.second_color)
+		   else
+		       rl.DrawTexturePro(config.resources.down, ffi.new("Rectangle", 0, 0, config.resources.down.width, config.resources.down.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.resources.images_size, config.resources.images_size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+           end			 
+		elseif level[i] == 3 then
+		    if not config.resources.left then
+		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.third_color)
+		    else
+			    rl.DrawTexturePro(config.resources.left, ffi.new("Rectangle", 0, 0, config.resources.left.width, config.resources.left.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.resources.images_size, config.resources.images_size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+			end
+		elseif level[i] == 4 then
+		    if not config.resources.right then
+		        rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.fourth_color)
+		    else
+			    rl.DrawTexturePro(config.resources.right, ffi.new("Rectangle", 0, 0, config.resources.right.width, config.resources.right.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.resources.images_size, config.resources.images_size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
+			end
 		end
-	    elseif level[i] == 2 then
-		if type(config.resources.down) == "nil" then
-		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.second_color)
-		else
-		    rl.DrawTexturePro(config.resources.down, ffi.new("Rectangle", 0, 0, config.resources.down.width, config.resources.down.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-                end			 
-	    elseif level[i] == 3 then
-		if type(config.resources.left) == "nil" then
-		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.third_color)
-		else
-	            rl.DrawTexturePro(config.resources.left, ffi.new("Rectangle", 0, 0, config.resources.left.width, config.resources.left.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-		end
-	    elseif level[i] == 4 then
-		if type(config.resources.right) == "nil" then
-		    rl.DrawCircle(positions[i][1], positions[i][2], config.circles.size, config.circles.fourth_color)
-		else
-		    rl.DrawTexturePro(config.resources.right, ffi.new("Rectangle", 0, 0, config.resources.right.width, config.resources.right.height), ffi.new("Rectangle", positions[i][1], positions[i][2], config.circles.size, config.circles.size), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
-		end
-	    end
 	-- Move them
 	positions[i][1] = positions[i][1] - config.circles.speed
 	end
@@ -39,11 +38,11 @@ function draw()
     -- Clear
     rl.ClearBackground(config.options.background_color)
 	
-	if type(config.resources.background_image) ~= "nil" then
+	if config.resources.background_image then
 	    rl.DrawTexturePro(config.resources.background_image, ffi.new("Rectangle", 0, 0, config.resources.background_image.width, config.resources.background_image.height), ffi.new("Rectangle", 0, 0, config.options.width, config.options.height), ffi.new("Vector2", 0, 0), 0, rl.WHITE)
 	end
 	
-	if type(config.resources.song) ~= "nil" and not rl.IsMusicPlaying(config.resources.song) then
+	if config.resources.song and not rl.IsMusicPlaying(config.resources.song) then
 	    rl.PlayMusicStream(config.resources.song)
 	end
 	
