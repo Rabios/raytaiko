@@ -34,12 +34,12 @@ readlevel(level)
 -- Game scene
 function game()
     rl.BeginDrawing()
-	    draw()
-		input()
-	rl.EndDrawing()
+	draw()
+	input()
+    rl.EndDrawing()
 	
-	-- NOTES: Timer isn't used in the game,But can be useful to manipulate parts of the level
-	timer = timer + 1
+    -- NOTES: Timer isn't used in the game,But can be useful to manipulate parts of the level
+    timer = timer + 1
 end
 
 -- Create window with audio device initialization,And VSync enabled
