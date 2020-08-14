@@ -1,8 +1,9 @@
 # raytaiko
 Simple Taiko No Tatsujin engine written in Lua using [raylib](http://www.raylib.com), Via [Astie Teddy's raylib LuaJIT binding](https://github.com/TSnake41/raylib-lua),Moddable with Lua.
 
-<img src="https://github.com/Rabios/raytaiko/blob/master/Screenshot%20(193).png">
-<img src="https://github.com/Rabios/raytaiko/blob/master/Screenshot%20(201).png">
+Demo shows raytaiko in action!
+
+<img src="https://github.com/Rabios/raytaiko/blob/master/demo.gif">
 
 ## How to play?
 
